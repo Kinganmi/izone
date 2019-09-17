@@ -40,7 +40,7 @@ class Tag(models.Model):
 
     def get_article_list(self):
         '''返回当前标签下所有发表的文章列表'''
-        return Article.objects.filter(tags=self)
+        return Article.objects.filter(tags=self, is_hide=0)
 
 
 # 文章分类
@@ -62,7 +62,7 @@ class Category(models.Model):
         return reverse('blog:category', kwargs={'slug': self.slug})
 
     def get_article_list(self):
-        return Article.objects.filter(category=self)
+        return Article.objects.filter(category=self, is_hide=0)
 
 
 # 文章
@@ -78,6 +78,7 @@ class Article(models.Model):
     views = models.IntegerField('阅览量', default=0)
     slug = models.SlugField(unique=True)
     is_top = models.BooleanField('置顶', default=False)
+    is_hide = models.SmallIntegerField(default=0, verbose_name='是否隐藏', help_text='0: 不隐藏， 1: 隐藏')
 
     category = models.ForeignKey(Category, verbose_name='文章分类')
     tags = models.ManyToManyField(Tag, verbose_name='标签')
@@ -106,10 +107,10 @@ class Article(models.Model):
         self.save(update_fields=['views'])
 
     def get_pre(self):
-        return Article.objects.filter(id__lt=self.id).order_by('-id').first()
+        return Article.objects.filter(id__lt=self.id, is_hide=0).order_by('-id').first()
 
     def get_next(self):
-        return Article.objects.filter(id__gt=self.id).order_by('id').first()
+        return Article.objects.filter(id__gt=self.id, is_hide=0).order_by('id').first()
 
 
 # 时间线

@@ -22,6 +22,7 @@ def goview(request):
 
 class ArchiveView(generic.ListView):
     model = Article
+    queryset = Article.objects.filter(is_hide=0)
     template_name = 'blog/archive.html'
     context_object_name = 'articles'
     paginate_by = 200
@@ -30,6 +31,7 @@ class ArchiveView(generic.ListView):
 
 class IndexView(generic.ListView):
     model = Article
+    queryset = Article.objects.filter(is_hide=0)
     template_name = 'blog/index.html'
     context_object_name = 'articles'
     paginate_by = getattr(settings, 'BASE_PAGE_BY', None)
@@ -84,6 +86,7 @@ class DetailView(generic.DetailView):
 
 class CategoryView(generic.ListView):
     model = Article
+    queryset = Article.objects.filter(is_hide=0)
     template_name = 'blog/category.html'
     context_object_name = 'articles'
     paginate_by = getattr(settings, 'BASE_PAGE_BY', None)

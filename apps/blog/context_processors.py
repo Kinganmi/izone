@@ -11,7 +11,7 @@ def settings_info(request):
         'site_description': settings.SITE_DESCRIPTION,
         'site_keywords': settings.SITE_KEYWORDS,
         'tool_flag': settings.TOOL_FLAG,
-        'api_flag': settings.API_FLAG,
+        # 'api_flag': settings.API_FLAG,
         'cnzz_protocol': settings.CNZZ_PROTOCOL,
         'beian': settings.BEIAN,
         'my_github': settings.MY_GITHUB,

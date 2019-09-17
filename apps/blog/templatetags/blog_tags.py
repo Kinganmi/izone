@@ -3,6 +3,7 @@
 from django import template
 from ..models import Article, Category, Tag, Carousel, FriendLink
 from django.db.models.aggregates import Count
+from django.db.models import Q
 from django.utils.html import mark_safe
 import re
 
@@ -15,11 +16,11 @@ def get_article_list(sort=None, num=None):
     '''获取指定排序方式和指定数量的文章'''
     if sort:
         if num:
-            return Article.objects.order_by(sort)[:num]
-        return Article.objects.order_by(sort)
+            return Article.objects.filter(is_hide=0).order_by(sort)[:num]
+        return Article.objects.filter(is_hide=0).order_by(sort)
     if num:
-        return Article.objects.all()[:num]
-    return Article.objects.all()
+        return Article.objects.filter(is_hide=0)[:num]
+    return Article.objects.filter(is_hide=0)
 
 
 @register.simple_tag
@@ -32,13 +33,13 @@ def keywords_to_str(art):
 @register.simple_tag
 def get_tag_list():
     '''返回标签列表'''
-    return Tag.objects.annotate(total_num=Count('article')).filter(total_num__gt=0)
+    return Tag.objects.filter(article__is_hide=0).annotate(total_num=Count('article')).filter(total_num__gt=0)
 
 
 @register.simple_tag
 def get_category_list():
     '''返回分类列表'''
-    return Category.objects.annotate(total_num=Count('article')).filter(total_num__gt=0)
+    return Category.objects.filter(article__is_hide=0).annotate(total_num=Count('article')).filter(total_num__gt=0)
 
 
 @register.inclusion_tag('blog/tags/article_list.html')
