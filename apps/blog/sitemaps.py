@@ -14,7 +14,7 @@ class ArticleSitemap(MySitemap):
     priority = 1.0
 
     def items(self):
-        return Article.objects.all(is_hide=0)
+        return Article.objects.all().filter(is_hide=0)
 
     def lastmod(self, obj):
         return obj.update_date
