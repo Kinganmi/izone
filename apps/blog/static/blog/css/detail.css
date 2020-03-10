@@ -14,13 +14,6 @@
 .article-body img:hover {
     cursor:pointer;
 }
-.codehilite pre {
-    border: none;
-    background-color: #e4eaef;
-    border-radius: 3px;
-    font-size: 80%;
-    padding: .8rem;
-}
 .article-body h2{
     font-weight:600;
     margin: 10px 0 10px 0;
@@ -54,9 +47,6 @@
     background-color:#212529;
     color:#fff;
 }
-.article-body code {
-    background-color:#e4eaef;
-}
 .article-body a {
     color: #ea6f5a;
 }
@@ -85,15 +75,26 @@
 blockquote {
     margin: 0 0 .5em;
 }
-code {
-    padding: .1rem .3rem;
-    font-size: 90%;
-    color: #222;
-    border-radius: 3px;
-}
 pre {
     line-height: 1.5;
     overflow-:auto;
+}
+/* pre next blog */
+.more-blog {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    z-index: 88;
+    color: #ccc;
+}
+.more-blog a {
+    padding: 5rem 1rem;
+}
+#icon-pre-blog {
+    left: 2%;
+}
+#icon-next-blog {
+    right: 2%;
 }
 /* Small devices (landscape phones, 576px and up) */
 /* X-iPhone6 AND plus */

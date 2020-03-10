@@ -70,7 +70,7 @@ class Category(models.Model):
 
 # 文章
 class Article(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='作者')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='作者', on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=150, verbose_name='文章标题')
     summary = models.TextField('文章摘要', max_length=230, default='文章摘要等同于网页description内容，请务必填写...')
     body = models.TextField(verbose_name='文章内容')
@@ -81,45 +81,52 @@ class Article(models.Model):
     slug = models.SlugField(unique=True)
     is_top = models.BooleanField('置顶', default=False)
     is_hide = models.SmallIntegerField(default=0, verbose_name='是否隐藏', help_text='0: 不隐藏， 1: 隐藏')
-    topic_id = models.OneToOneField('blog.Topic',
-                                    on_delete=models.SET_NULL,
-                                    to_field='n_id',
-                                    db_constraint=False,
-                                    null=True,
-                                    blank=True,
-                                    verbose_name='关联专栏')
+    category = models.ForeignKey(Category, verbose_name='文章分类', on_delete=models.PROTECT)
+    topic = models.OneToOneField('blog.Topic',
+                                 on_delete=models.SET_NULL,
+                                 to_field='n_id',
+                                 db_constraint=False,
+                                 null=True,
+                                 blank=True,
+                                 verbose_name='关联专栏')
     topic_order = models.SmallIntegerField(verbose_name="文件在专栏中的排序", null=True, blank=True)
-    category = models.ForeignKey(Category, verbose_name='文章分类')
     tags = models.ManyToManyField(Tag, verbose_name='标签')
     keywords = models.ManyToManyField(Keyword, verbose_name='文章关键词',
                                       help_text='文章关键词，用来作为SEO中keywords，最好使用长尾词，3-4个足够')
 
-    class Meta:
-        verbose_name = '文章'
-        verbose_name_plural = verbose_name
-        ordering = ['-create_date']
 
-    def __str__(self):
-        return self.title[:20]
+class Meta:
+    verbose_name = '文章'
+    verbose_name_plural = verbose_name
+    ordering = ['-create_date']
 
-    def get_absolute_url(self):
-        return reverse('blog:detail', kwargs={'slug': self.slug})
 
-    def body_to_markdown(self):
-        return markdown.markdown(self.body, extensions=[
-            'markdown.extensions.extra',
-            'markdown.extensions.codehilite',
-        ])
+def __str__(self):
+    return self.title[:20]
 
-    def update_views(self):
-        self.views += 1
-        self.save(update_fields=['views'])
 
-    def get_pre(self):
-        return Article.objects.filter(id__lt=self.id, is_hide=0).order_by('-id').first()
+def get_absolute_url(self):
+    return reverse('blog:detail', kwargs={'slug': self.slug})
 
-    def get_next(self):
-        return Article.objects.filter(id__gt=self.id, is_hide=0).order_by('id').first()
+
+def body_to_markdown(self):
+    return markdown.markdown(self.body, extensions=[
+        'markdown.extensions.extra',
+        'markdown.extensions.codehilite',
+    ])
+
+
+def update_views(self):
+    self.views += 1
+    self.save(update_fields=['views'])
+
+
+def get_pre(self):
+    return Article.objects.filter(id__lt=self.id, is_hide=0).order_by('-id').first()
+
+
+def get_next(self):
+    return Article.objects.filter(id__gt=self.id, is_hide=0).order_by('id').first()
 
 
 # 时间线
