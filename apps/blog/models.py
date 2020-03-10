@@ -4,8 +4,11 @@ from django.shortcuts import reverse
 import markdown
 import re
 
-
 # Create your models here.
+
+
+IMG_LINK = '/static/blog/img/summary.png'
+
 
 # 文章关键词，用来作为SEO中keywords
 class Keyword(models.Model):
@@ -67,7 +70,6 @@ class Category(models.Model):
 
 # 文章
 class Article(models.Model):
-    IMG_LINK = '/static/blog/img/summary.png'
     author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='作者')
     title = models.CharField(max_length=150, verbose_name='文章标题')
     summary = models.TextField('文章摘要', max_length=230, default='文章摘要等同于网页description内容，请务必填写...')
@@ -79,7 +81,14 @@ class Article(models.Model):
     slug = models.SlugField(unique=True)
     is_top = models.BooleanField('置顶', default=False)
     is_hide = models.SmallIntegerField(default=0, verbose_name='是否隐藏', help_text='0: 不隐藏， 1: 隐藏')
-
+    topic_id = models.OneToOneField('blog.Topic',
+                                    on_delete=models.SET_NULL,
+                                    to_field='n_id',
+                                    db_constraint=False,
+                                    null=True,
+                                    blank=True,
+                                    verbose_name='关联专栏')
+    topic_order = models.SmallIntegerField(verbose_name="文件在专栏中的排序", null=True, blank=True)
     category = models.ForeignKey(Category, verbose_name='文章分类')
     tags = models.ManyToManyField(Tag, verbose_name='标签')
     keywords = models.ManyToManyField(Keyword, verbose_name='文章关键词',
@@ -219,6 +228,7 @@ class FriendLink(models.Model):
         self.is_show = True
         self.save(update_fields=['is_show'])
 
+
 class AboutBlog(models.Model):
     body = models.TextField(verbose_name='About 内容')
     create_date = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
@@ -237,3 +247,18 @@ class AboutBlog(models.Model):
             'markdown.extensions.codehilite',
         ])
 
+
+class Topic(models.Model):
+    n_id = models.IntegerField(primary_key=True)
+    s_name = models.CharField(verbose_name="专栏名", max_length=50)
+    s_display_name = models.CharField(verbose_name="专栏显示名", max_length=100)
+    s_img_url = models.CharField(verbose_name="图片地址", max_length=200)
+    d_create = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
+    d_update = models.DateTimeField(verbose_name='修改时间', auto_now=True)
+
+    class Meta:
+        verbose_name = 'Topic'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.s_display_name

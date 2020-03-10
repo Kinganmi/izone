@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.utils.text import slugify
 from django.views import generic
 from django.conf import settings
-from .models import Article, Tag, Category, Timeline, Silian, AboutBlog
+from .models import Article, Tag, Category, Timeline, Silian, AboutBlog, Topic
 from .utils import site_full_url
 from django.core.cache import cache
 
@@ -179,3 +179,18 @@ class MySearchView(SearchView):
 def robots(request):
     site_url = site_full_url()
     return render(request, 'robots.txt', context={'site_url': site_url}, content_type='text/plain')
+
+
+class TopicView(generic.ListView):
+    model = Topic
+    queryset = Topic.objects.all()
+    template_name = 'blog/topic_list.html'
+    context_object_name = 'topic'
+    paginate_by = getattr(settings, 'BASE_PAGE_BY', None)
+    paginate_orphans = getattr(settings, 'BASE_ORPHANS', 0)
+
+
+class TopicDetailView(generic.DetailView):
+    model = Topic
+    template_name = 'blog/topic_detail.html'
+    context_object_name = 'topic'

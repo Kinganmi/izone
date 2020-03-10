@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (Article, Tag, Category, Timeline,
                      Carousel, Silian, Keyword, FriendLink,
-                     AboutBlog)
+                     AboutBlog, Topic)
 
 
 @admin.register(Article)
@@ -96,3 +96,8 @@ class AboutBlogAdmin(admin.ModelAdmin):
         if request.user.is_superuser:
             return qs
         return None
+
+
+@admin.register(Topic)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('n_id', 's_name', 's_display_name', 'd_create', 'd_update')

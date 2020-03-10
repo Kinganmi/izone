@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import url
+
 # from .views import goview
 from .views import (IndexView, DetailView, CategoryView, TagView, AboutView,
-                    SilianView, MySearchView, ArchiveView, TimelineView)
-
+                    SilianView, MySearchView, ArchiveView, TimelineView, TopicView,
+                    TopicDetailView)
 urlpatterns = [
     # url(r'^go/$', goview, name='go'),  # 测试用页面
 
@@ -20,4 +21,7 @@ urlpatterns = [
     url(r'archive/$', ArchiveView.as_view(), name='archive'),  # 归档页面
     url(r'^silian\.xml$', SilianView.as_view(content_type='application/xml'), name='silian'),  # 死链页面
     url(r'^search/$', MySearchView.as_view(), name='search_view'),  # 全文搜索
+    url(r'^topic/$', TopicView.as_view(), name='topic'),  # 专栏
+    url(r'^topic/<int:pk>/', TopicDetailView.as_view(), name='topic-detail'),  # 专栏详情
 ]
+
