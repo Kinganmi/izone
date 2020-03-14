@@ -15,78 +15,64 @@
 {% endblock %}
 
 {% block base_content %}
-   <div class="container">
-    <div class="row">
-        <div class="col-lg-9">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb bg-white border-0 rounded-0 mb-2 py-2 f-15">
-                    <li class="breadcrumb-item">
-                        <i class="fa fa-home mr-1"></i><a href="{% url 'blog:index' %}">首页</a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <a href="{{ article.category.get_absolute_url }}">{{ article.category}}</a>
-                    </li>
-                    <li class="breadcrumb-item active d-none d-md-block" aria-current="page">{{ article.title }}</li>
-                    <li class="breadcrumb-item active d-md-none" aria-current="page">当前位置</li>
-                </ol>
-            </nav>
-            <div class="card rounded-0 border-0" id="article">
-                <div class="card-body px-2 px-md-3 pb-0">
-                    <h1 class="card-title text-center font-weight-bold text-info">{{ article.title }}</h1>
-                    <hr>
-                    <div class="text-center f-13">
-                        <span class="mx-2" data-toggle="tooltip" data-placement="bottom"
-                              title="最后编辑于{{ article.update_date|date:'Y年m月d日' }}">{{ article.create_date }}</span>
-                        <span class="mx-2">阅读 {{ article.views }}</span>
-                        <a class="mx-2 to-com" href="#comment-block">评论 {% get_comment_count article %}</a>
+    <div class="container">
+        <div class="row">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-white border-0 rounded-0 mb-2 py-2 f-15">
+                        <li class="breadcrumb-item">
+                            <i class="fa fa-home mr-1"></i><a href="{% url 'blog:index' %}">首页</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="{{ article.category.get_absolute_url }}">{{ article.category }}</a>
+                        </li>
+                        <li class="breadcrumb-item active d-none d-md-block"
+                            aria-current="page">{{ article.title }}</li>
+                        <li class="breadcrumb-item active d-md-none" aria-current="page">当前位置</li>
+                    </ol>
+                </nav>
+                <div class=" row justify-content-center">
+                    <h1 class="display-4">
+                        SlatStack
+                        <small class="text-muted">副标题</small>
+                    </h1>
+                </div>
+                <picture>
+                    <img class="img-fluid" src="https://morvanzhou.github.io/static/results/tensorflow/5_16_01.png"
+                         alt="">
+                </picture>
+                <div class="mt-2 ">
+                    <p>sdfsdkfsdfsldfsdfsdfdfs</p>
+                </div>
+
+                <p>内容目录</p>
+
+                <div class="row">
+                    <div class="media mb-1 mb-sm-2 p-2 p-lg-3">
+                        <div class="align-self-center mr-2 mr-lg-3 w-25 modal-open">
+                            <a href="{{ article.get_absolute_url }}" target="_blank">
+                                <img class="w-100 article-img" src="{{ article.img_link }}" alt="{{ article.title }}">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            {% if article.is_top %}<img class="float-right top-article-img"
+                                                        src="{% static 'blog/img/TOP.png' %}">{% endif %}
+                            <div class="text-muted mb-2 f-12">
+{#                                {% get_user_avatar_tag article.author %}#}
+                                <span>{{ article.author }}</span>
+                                <span><i
+                                        class="fa fa-calendar-times-o ml-2 mr-1"></i>{{ article.create_date|naturaltime }}</span>
+                            </div>
+                            <h2 class="mt-0 font-weight-bold text-info f-17">
+                                <a href="{{ article.get_absolute_url }}" target="_blank">{{ article.title }}</a>
+                            </h2>
+                            <p class="d-none d-sm-block mb-2 f-15">{{ article.summary|truncatechars:130 }}</p>
+                            <p class="d-block d-sm-none mb-2 f-15">{{ article.summary|truncatechars:64 }}</p>
+
+                        </div>
                     </div>
-                    <div class="article-body mt-4 f-17" style="line-height:1.8">
-                        {{ article.body|safe }}
-                        <blockquote class="p-1 f-14" style="border-left: 4px solid #dc3545;">
-                            <p class="m-1"><strong>版权声明：</strong>如无特殊说明，文章均为本站原创，转载请注明出处</p>
-                            <p class="m-1"><strong>本文链接：</strong>{{ site_url }}{{ article.get_absolute_url }}</p>
-                        </blockquote>
-                    </div>
-                    <div class="tag-cloud my-4">
-                        {% for tag in article.tags.all %}
-                        <a class="tags f-16" href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
-                        {% endfor %}
-                    </div>
-                    <nav class="more-page f-16">
-                        <ul class="pagination justify-content-between">
-                            <li class="page-item">
-                                {% if article.get_pre %}
-                                <a class="d-none d-md-block" href="{{ article.get_pre.get_absolute_url }}"
-                                   title="上一篇：{{ article.get_pre.title }}">
-                                    <i class="fa fa-chevron-left mr-1"></i>
-                                    {{ article.get_pre.title|truncatechars:18 }}
-                                </a>
-                                <a class="d-md-none" href="{{ article.get_pre.get_absolute_url }}">
-                                    <i class="fa fa-chevron-left mr-1"></i>上一篇</a>
-                                {% endif %}
-                            </li>
-                            <li class="page-item">
-                                {% if article.get_next %}
-                                <a class="d-none d-md-block" href="{{ article.get_next.get_absolute_url }}"
-                                   title="下一篇：{{ article.get_next.title }}">
-                                    {{ article.get_next.title|truncatechars:18 }}
-                                    <i class="fa fa-chevron-right ml-1"></i>
-                                </a>
-                                <a class="d-md-none" href="{{ article.get_next.get_absolute_url }}">
-                                    下一篇<i class="fa fa-chevron-right ml-1"></i>
-                                </a>
-                                {% endif %}
-                            </li>
-                        </ul>
-                    </nav>
-{#                    {% include 'blog/tags/reward.html' %}#}
                 </div>
             </div>
-{#            <div class="card mt-2 rounded-0 border-0" id="comment-block">#}
-{#                {% include 'comment/comment_form.html' %}#}
-{#                {% get_parent_comments article as comment_list %}#}
-{#                {% include 'comment/comment_list.html' %}#}
-{#            </div>#}
         </div>
         <div class="col-lg-3">
             <div class="article-toc d-none d-lg-block f-16">
@@ -94,5 +80,5 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 {% endblock %}

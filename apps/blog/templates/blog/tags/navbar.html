@@ -1,7 +1,8 @@
 {% load static oauth_tags comment_tags %}
 <nav class="navbar navbar-expand-md bg-white fixed-top blog-navbar py-md-0">
     <a class="navbar-brand d-md-none d-lg-block" id="site-logo-name" href="{% url 'blog:index' %}">
-        <strong class="px-2">{{site_logo_name}}</strong>
+{#        <strong class="px-2">{{site_logo_name}}</strong>#}
+        <img src="/static/blog/img/logo.png" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,10 +14,10 @@
                 {% url 'blog:index' as index_url %}
                 <a class="nav-link py-md-3 {% if request.path == index_url %}active{% endif %}" href="{{ index_url }}"><i class="fa fa-home mr-1"></i>首页<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item mr-2">
-                {% url 'blog:topic' as topic_url %}
-                <a class="nav-link py-md-3 {% if request.path == topic_url %}active{% endif %}" href="{{ topic_url }}"><i class="fa fa-sitemap mr-1"></i>专栏</a>
-            </li>
+{#            <li class="nav-item mr-2">#}
+{#                {% url 'blog:topic' as topic_url %}#}
+{#                <a class="nav-link py-md-3 {% if request.path == topic_url %}active{% endif %}" href="{{ topic_url }}"><i class="fa fa-sitemap mr-1"></i>专栏</a>#}
+{#            </li>#}
             <li class="nav-item mr-2">
                 {% url 'blog:archive' as archive_url %}
                 <a class="nav-link py-md-3 {% if request.path == archive_url %}active{% endif %}" href="{{ archive_url }}"><i class="fa fa-sitemap mr-1"></i>归档</a>

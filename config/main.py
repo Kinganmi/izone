@@ -56,7 +56,7 @@ DEFAULT_FROM_EMAIL = os.getenv('IZONE_DEFAULT_FROM_EMAIL', 'L6BJ <your-email-add
 SITE_END_TITLE = os.getenv('IZONE_SITE_END_TITLE', '')
 SITE_DESCRIPTION = os.getenv('IZONE_SITE_DESCRIPTION', '是一个使用 Django+Bootstrap4 搭建的个人博客类型网站')
 SITE_KEYWORDS = os.getenv('IZONE_SITE_KEYWORDS', 'Django博客,个人博客')
-SITE_LOGO_NAME = os.getenv('IZONE_LOGO_NAME', 'TendCode')
+SITE_LOGO_NAME = os.getenv('IZONE_LOGO_NAME', 'Lao Liu')
 
 # 个性化设置，非必要信息
 # 个人 Github 地址

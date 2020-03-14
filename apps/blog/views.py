@@ -5,6 +5,7 @@ from django.conf import settings
 from .models import Article, Tag, Category, Timeline, Silian, AboutBlog, Topic
 from .utils import site_full_url
 from django.core.cache import cache
+from utils.blog_log import logger
 
 from markdown.extensions.toc import TocExtension  # 锚点的拓展
 import markdown

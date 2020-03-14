@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-
 from oauth.models import Ouser
-from blog.models import Article, Tag, Category, Timeline
-from tool.models import ToolLink
+from apps.blog.models import Article, Tag, Category, Timeline
+from apps.tool.models import ToolLink
 from .serializers import (UserSerializer, ArticleSerializer,
                           TimelineSerializer, TagSerializer, CategorySerializer, ToolLinkSerializer)
 from rest_framework import viewsets, permissions
