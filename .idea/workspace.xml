@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="df66c73e-2c21-4df4-a801-3ad31e8a303d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1QUhoNpnfSg4uVz6rKY5ENllLtv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="GrepConsole" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\mycode\izone\apps\tool\templates\tool" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.blog_log">
+    <configuration name="blog_log" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="izone" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/blog_log.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="common" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="izone" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="izone" type="Python.DjangoServer" factoryName="Django server">
+      <module name="izone" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="izone.settings" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\izone\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="9000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.blog_log" />
+        <item itemvalue="Python.common" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df66c73e-2c21-4df4-a801-3ad31e8a303d" name="Default Changelist" comment="" />
+      <created>1567831255280</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1567831255280</updated>
+      <workItem from="1567831256663" duration="363000" />
+      <workItem from="1567831636341" duration="383000" />
+      <workItem from="1567832089334" duration="28000" />
+      <workItem from="1567859323824" duration="1203000" />
+      <workItem from="1568032833202" duration="5846000" />
+      <workItem from="1568119241466" duration="5061000" />
+      <workItem from="1568208970289" duration="4328000" />
+      <workItem from="1568638139764" duration="4120000" />
+      <workItem from="1568721308511" duration="5767000" />
+      <workItem from="1568898706251" duration="3223000" />
+      <workItem from="1569062758802" duration="2991000" />
+      <workItem from="1583043442872" duration="3934000" />
+      <workItem from="1583067077247" duration="4916000" />
+      <workItem from="1583156161846" duration="817000" />
+      <workItem from="1583239932306" duration="3905000" />
+      <workItem from="1583416213161" duration="4552000" />
+      <workItem from="1583497590574" duration="4384000" />
+      <workItem from="1583547272490" duration="3605000" />
+      <workItem from="1583590326865" duration="1069000" />
+      <workItem from="1583758435486" duration="6401000" />
+      <workItem from="1583843069553" duration="2706000" />
+      <workItem from="1583845857872" duration="1549000" />
+      <workItem from="1583929669096" duration="3389000" />
+      <workItem from="1584016930876" duration="2154000" />
+      <workItem from="1584106506129" duration="870000" />
+      <workItem from="1584178513510" duration="385000" />
+      <workItem from="1584178923576" duration="6480000" />
+      <workItem from="1584271306786" duration="309000" />
+      <workItem from="1584364908568" duration="1779000" />
+      <workItem from="1584712134385" duration="421000" />
+      <workItem from="1585575318847" duration="828000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584191399118">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1584191399118" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1584365163400">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1584365163400" />
+    <state x="552" y="183" key="GrepConsoleSettings" timestamp="1584190665897">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="183" key="GrepConsoleSettings/0.0.1920.1050@0.0.1920.1050" timestamp="1584190665897" />
+    <state x="821" y="453" key="GrepConsoleSound" timestamp="1584190470952">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="821" y="453" key="GrepConsoleSound/0.0.1920.1050@0.0.1920.1050" timestamp="1584190470952" />
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1584191420921">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584191420921" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1584191420921">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584191420921" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1584191420921">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584191420921" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1584191420921">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584191420921" />
+    <state x="358" y="26" width="921" height="708" key="SettingsEditor" timestamp="1584271427559">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="358" y="26" width="921" height="708" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1584271427559" />
+    <state x="752" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583846571295">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="752" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1583846571295" />
+    <state x="567" y="225" width="786" height="600" key="find.popup" timestamp="1584366507471">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="567" y="225" width="786" height="600" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1584366507471" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584190234996">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1584190234996" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/izone$common.coverage" NAME="common Coverage Results" MODIFIED="1583499210030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
